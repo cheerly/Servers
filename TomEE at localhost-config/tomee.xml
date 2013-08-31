@@ -7,4 +7,30 @@
 		UserName wuxin
 		Password root
 	</Resource>
+	
+	<Resource id="LocalJmsResourceAdapter" type="ActiveMQResourceAdapter">
+        BrokerXmlConfig broker:(tcp://localhost:8082)?useJmx=false
+        ServerUrl tcp://localhost:8082
+    </Resource>
+    
+ 	<Resource id="LocalJmsConnectionFactory" type="javax.jms.ConnectionFactory">
+        ResourceAdapter LocalJmsResourceAdapter
+    </Resource>
+
+    <Container id="LocalJmsMdbContainer" type="MESSAGE">
+        ResourceAdapter LocalJmsResourceAdapter
+    </Container>
+    
+	<Resource id="FooQueue" type="Queue"/>
+    <Resource id="BarTopic" type="Topic"/>    
+    
+	<Resource id="126Mail" type="javax.mail.Session">
+	   mail.smtp.host smtp.126.com
+	   mail.smtp.port 25
+	   mail.transport.protocol smtp
+	   mail.smtp.auth true
+	   mail.smtp.user tomeejee
+	   password abc123
+	</Resource> 
+    
 </tomee>
