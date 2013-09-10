@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <tomee>
 	<!-- see http://tomee.apache.org/containers-and-resources.html -->
-	<Resource id="mysql" type="javax.sql.DataSource">
+	<Resource id="mysql-moon" type="javax.sql.DataSource">
 		JdbcDriver com.mysql.jdbc.Driver
 		JdbcUrl jdbc:mysql://localhost:3306/moon?useUnicode=true&amp;characterEncoding=UTF-8
 		UserName wuxin
@@ -23,6 +23,8 @@
     
 	<Resource id="FooQueue" type="Queue"/>
     <Resource id="BarTopic" type="Topic"/>    
+    
+    <Resource id="AnswerQueue" type="Queue"/>
     
 	<Resource id="126Mail" type="javax.mail.Session">
 	   mail.smtp.host smtp.126.com
