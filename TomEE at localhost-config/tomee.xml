@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <tomee>
 	<!-- see http://tomee.apache.org/containers-and-resources.html -->
-	<Resource id="mysql-moon" type="javax.sql.DataSource">
+	<Resource id="moon-ds" type="javax.sql.DataSource">
 		JdbcDriver com.mysql.jdbc.Driver
 		JdbcUrl jdbc:mysql://localhost:3306/moon?useUnicode=true&amp;characterEncoding=UTF-8
 		UserName wuxin
@@ -9,8 +9,9 @@
 	</Resource>
 	
 	<Resource id="LocalJmsResourceAdapter" type="ActiveMQResourceAdapter">
-        BrokerXmlConfig broker:(tcp://localhost:8082)?useJmx=false
+        BrokerXmlConfig broker:(tcp://localhost:8082)?useJmx=false&amp;persistent=true
         ServerUrl tcp://localhost:8082
+        DataSource moon-ds
     </Resource>
     
  	<Resource id="LocalJmsConnectionFactory" type="javax.jms.ConnectionFactory">
