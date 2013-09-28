@@ -22,10 +22,18 @@
         ResourceAdapter LocalJmsResourceAdapter
     </Container>
     
-	<Resource id="FooQueue" type="Queue"/>
+	<!-- <Resource id="FooQueue" type="Queue"/>
     <Resource id="BarTopic" type="Topic"/>    
     
-    <Resource id="AnswerQueue" type="Queue"/>
+    <Resource id="AnswerQueue" type="Queue"/> -->
+    
+    <Resource id="myQueue_1" type="Queue">
+    	destination moon.Queue_1
+    </Resource>
+
+   <!--  <Resource id="myQueue_2" type="Queue">
+    	destination moon.Queue_2
+    </Resource> -->
     
 	<Resource id="126Mail" type="javax.mail.Session">
 	   mail.smtp.host smtp.126.com
